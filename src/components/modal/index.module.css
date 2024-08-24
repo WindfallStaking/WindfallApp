@@ -1,0 +1,189 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.main {
+  width: 607px;
+  box-sizing: border-box;
+  padding: 40px 60px;
+  box-shadow: -30px -25px 60px hsla(346, 69%, 56%, 0.303),
+    30px -25px 60px hsla(195, 77%, 38%, 0.3),
+    -30px 25px 60px hsla(14, 67%, 63%, 0.3),
+    30px 25px 60px hsla(160, 46%, 52%, 0.3);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(to bottom, rgba(17, 56, 68, 1), rgba(0, 1, 1, 1));
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.title {
+  margin: 0%;
+  font-family: "Lato";
+  color: #ffffff;
+  font-size: 28px !important;
+  line-height: normal;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+.text {
+  font-size: 20px;
+}
+.text span {
+  font-family: "Lato";
+  font-weight: 500;
+  color: #2ceffb;
+}
+
+.gradient_border {
+  background: linear-gradient(
+    to bottom,
+    rgba(192, 58, 89, 0.5),
+    rgba(216, 181, 92, 0.5),
+    rgba(6, 177, 133, 0.5),
+    rgba(17, 132, 170, 0.5)
+  );
+  box-sizing: border-box;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1px;
+  border-radius: 13.31px;
+  margin-bottom: 25px;
+}
+.input_box {
+  width: 100%;
+  padding: 12px 22px;
+  background: linear-gradient(to bottom, rgb(7, 23, 28), rgb(12, 40, 48));
+  z-index: 1;
+  border: none;
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+  font-family: "Lato";
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 24px !important;
+  cursor: pointer;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.input {
+  width: 100%;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
+}
+.token_icon {
+    position: relative;
+    width: 29px;
+    height: 28px;
+  }
+
+.max_button {
+  color: white;
+  font-size: 13px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid rgba(47, 190, 222, 0.3);
+  box-sizing: border-box;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.info {
+  font-family: "Lato";
+  color: rgba(183, 183, 183, 1);
+  font-size: 14px;
+  align-self: flex-start;
+}
+.terms {
+  display: flex;
+  column-gap: 45px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.bubble {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: rgba(217, 217, 217, 1);
+  border: 3px solid rgba(147, 147, 147, 1);
+  cursor: pointer;
+  padding: 10px;
+}
+  
+.change_button {
+  border-radius: 13.31px;
+  border: 1.331px solid #c03a59;
+  background: linear-gradient(to bottom, rgb(7, 23, 28), rgb(12, 40, 48));
+  color: #ff3e3e;
+  font-family: "Lato";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.085px;
+  z-index: 2 !important;
+  cursor: pointer;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  .change_button > span {
+    box-sizing: border-box;
+    padding: 5px 30px;
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    color: white;
+  }
+
+.unstake_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;  
+  letter-spacing: -0.085px;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.available_unstake {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  padding-right: 50px;
+  border-right: 2px solid rgba(255,255,255,0.588);
+}
+.pending_unstake {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  padding-left: 50px;
+}

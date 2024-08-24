@@ -1,0 +1,79 @@
+
+  .wallet_connect_button {
+    display: flex;
+    padding: 11.199px 26.123px 11.116px 26.877px;
+    justify-content: center;
+    align-items: center;
+  }
+
+.outer_circle {
+  position: absolute;
+  left: -60px;
+  top: -2px;
+  margin: auto 0px;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 30px;
+}
+
+.icon {
+  position: relative;
+  width: 26px;
+  height: 26px;
+}
+
+.wallet_connect_button {
+  background-color: transparent;
+  border: 1px solid #fafafa;
+  border-radius: 10px;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 11px 36px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.wrong_network {
+  background-color: rgba(149, 39, 39, 1);
+  border: 1px solid rgba(255, 62, 62, 0.3);
+  border-radius: 10px;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 11px 36px;
+  color: white;
+  cursor: pointer;
+}
+
+
+.networks {
+  position: absolute;
+  opacity: 0;
+  left: -110px;
+  top: 0px;
+  display: flex;
+  column-gap: 8px;
+  z-index: 20;
+}
+
+.network_outer_circle {
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 30px;
+}
+
+
+  .outer__circle {
+    left: -52px;
+  }
+
+  /* .wrong_network { */
+  /*   background-color: rgba(149, 39, 39, 1); */
+  /*   border: 1px solid rgba(255, 62, 62, 0.3); */
+  /*   display: flex; */
+  /*   padding: 11.199px 26.123px 11.116px 26.877px; */
+  /*   justify-content: center; */
+  /*   align-items: center; */
+  /* } */
