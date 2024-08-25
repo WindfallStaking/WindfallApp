@@ -1,10 +1,13 @@
 "use client";
+import Image from 'next/image';
 import { formatEther } from 'viem';
 import { colors, months, jackpotColors, jackpotNames } from '@/config/const';
 import styles from '../index.module.css';
 import { usePastWinners } from '@/config/query';
-
+import icons from '@/public/icons/icons';
 export default function Canto() {
+	// Use the useQuery hook to fetch data
+
 	const { data, isLoading, isError } = usePastWinners(7700);
 	// Show loading indicator while data is being fetched
 	if (isLoading || data === undefined) return <span>Loading...</span>;
@@ -26,8 +29,10 @@ export default function Canto() {
 							key={index}
 							style={{ color: jackpotColors[jackpotType] }}
 						>
+							<td>
+								<Image src={icons['note']} width={29} height={28} alt="Chain Id Icon" />
+							</td>
 							<td className={styles.title_mobile}>
-								<span style={{ color: colors[7700] }}>Note </span>
 								<span style={{ color: jackpotColors[jackpotType] }}>{jackpotNames[jackpotType]}</span>
 								<p className={styles.date_mobile} style={{ color: "#ffffff" }}>{months[currentDate.getMonth()]} {currentDate.getDay()}, {currentDate.getFullYear()}</p>
 							</td>
@@ -44,17 +49,3 @@ export default function Canto() {
 		</>
 	);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

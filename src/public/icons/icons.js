@@ -1,9 +1,9 @@
 import timer from "./timer.svg";
 import canto from "./canto.png";
 import blast from "./blast.svg";
+import note from "./note.svg";
 import cantoMobile from "./canto.png";
 import metamask from "./metamask.svg";
-import matic from "./matic.png";
 import maticMobile from "./matic.svg";
 import ethereum from "./ethereum.svg";
 import ethereumMobile from "./ethereum.svg";
@@ -16,6 +16,7 @@ const icons = {
   timer,
   canto,
   blast,
+  note,
   ethereum,
   cantoMobile,
   maticMobile,

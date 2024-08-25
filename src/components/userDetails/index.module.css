@@ -50,8 +50,11 @@
 
 .box {
   width: 523px;
+  height: 190px;
   box-sizing: border-box;
-  padding: 25px;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
   display: flex;
   margin-bottom: 20px;
   flex-direction: column;
@@ -62,12 +65,12 @@
     rgba(255, 255, 255, 0)
   );
   border-radius: 10px;
-  row-gap: 15px;
+  row-gap: 25px;
 }
 
-.token {
+.header {
   display: flex;
-  column-gap: 10px;
+  column-gap: 160px;
   font-family: "Lato";
   font-size: 18px;
   align-items: center;
@@ -77,6 +80,14 @@
   position: relative;
   width: 27px;
   height: 27px;
+}
+
+.token_name_icon {
+  display: flex;
+  place-items: center;
+  gap: 10px;
+  font-size: 36px;
+  padding-left: 10px;
 }
 
 .amount {
@@ -104,7 +115,6 @@
   row-gap: 10px;
 }
 .button {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -118,7 +128,6 @@
 .unstake_none {
   border-radius: 10px;
   height: 100%;
-  width: 33%;
   display: flex;
   font-size: 15.7px;
   align-items: center;
@@ -127,9 +136,15 @@
 }
 
 .increase_stake {
+  width: 60%;
   border: 2px solid rgba(62, 255, 62, 1);
-  background: linear-gradient(to bottom, hsla(120, 100%, 50%, 0.3), #ffffff00);
-  color: rgba(62, 255, 62, 1);
+  background: linear-gradient(to top, hsla(120, 80%, 50%, 0.8), #33DE2F88);
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(to top, hsla(120, 50%, 30%, 0.5), #33DE2F88);
+    color: white;
+  }
 }
 
 /* Add styles for other buttons if needed */
@@ -140,12 +155,24 @@
 }
 
 .unstake_none {
-  border: 2px solid rgba(255, 62, 62, 1);
-  background: linear-gradient(to bottom, hsla(0, 100%, 50%, 0.2), #ffffff00);
-  color: rgba(255, 62, 62, 1);
+  width: 30%;
+  border: 1px solid rgba(255, 62, 62, 1);
+  background: transparent;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+  }
 }
 .unstake_pending {
-  border: 2px solid rgba(200, 255, 62, 1);
-  background: linear-gradient(to bottom, hsla(90, 100%, 50%, 0.2), #ffffff00);
-  color: rgba(200, 255, 62, 1);
+  width: 30%;
+  border: 1px solid rgba(200, 255, 62, 1);
+  background: transparent;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+  }
 }

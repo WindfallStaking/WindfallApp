@@ -3,13 +3,13 @@ import styles from "./index.module.css";
 import icons from "@/public/icons/icons";
 import Image from "next/image";
 import IncreaseStakeModal from "../modal/increaseStake";
-import ReduceStakeModal from "../modal/reduceStake";
-import UnstakeModal from "../modal/unstake";
-import DisclaimerModal from "../modal/disclaimer";
-import { colors, isSupportedChainId, names } from "@/config/const";
+import { colors, isSupportedChainId, names, tokens } from "@/config/const";
 import { formatEther } from "viem";
 import { useContractState, useUserDetails } from "@/config/query/queries";
 import { useState } from "react";
+import ReduceStakeModal from "../modal/reduceStake";
+import UnstakeModal from "../modal/unstake";
+import DisclaimerModal from "../modal/disclaimer";
 export default function UserInfo({ address, chainId }) {
   const { data: userData } = useUserDetails(address, chainId);
   const { data: contractData } = useContractState(chainId);
@@ -25,19 +25,19 @@ export default function UserInfo({ address, chainId }) {
   const userValue = Number(formatEther(userData.value));
   const userPercentage = contractData.totalStaked > 0 ? Number(BigInt(100) * userData.value / contractData.totalStaked) : 0;
   const chainName = names[chainId].toLowerCase();
+  const tokenName = tokens[chainId].toUpperCase();
   return (
     <>
       <div className={styles.box} >
         <div className={styles.amount_details}>
-          <div className={styles.token} style={{ color: colors[chainId] }}>
-            <div className={styles.token_icon}>
-              <Image src={icons[chainName]} alt="logo" fill />
+          <div className={styles.header} style={{ color: colors[chainId] }}>
+            <div className={styles.token_name_icon}>
+              <Image src={icons[chainName]} style={{ width: '27px', height: '27px' }} alt="logo" />
+              {tokenName}
             </div>
-            {chainName.toUpperCase()}
-          </div>
-          <div className={styles.amount}>
-            <h4>Amount Staked:</h4> {userValue > 100 ? userValue.toFixed(0) : userValue.toFixed(2)}
-            <span>{userPercentage > 1 ? userPercentage.toFixed(1) : userPercentage.toFixed(3)}%</span>
+            <div className={styles.amount}>
+              {userValue > 100 ? userValue.toFixed(0) : userValue.toFixed(2)}
+            </div>
           </div>
         </div>
         <div className={styles.button}>
@@ -47,9 +47,8 @@ export default function UserInfo({ address, chainId }) {
             } else {
               setIncreaseStakeModal(true)
             }
-          }}>Increase Stake</button>
-          <button className={styles.reduce_stake} onClick={() => { setReduceStakeModal(true) }} >Reduce Stake</button>
-          <button className={userData.availableUnstake > 0 ? styles.unstake_pending : styles.unstake_none} onClick={() => { setUnstakeModal(true) }} >Unstake</button>
+          }}>Stake ({userPercentage > 1 ? userPercentage.toFixed(0) : userPercentage.toFixed(3)}%)</button>
+          <button className={userData.availableUnstake > BigInt(0) ? styles.unstake_pending : styles.unstake_none} onClick={() => { userData.availableUnstake > BigInt(0) ? setUnstakeModal(true) : setReduceStakeModal(true) }} >Unstake</button>
         </div>
       </div>
 
